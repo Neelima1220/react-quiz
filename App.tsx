@@ -51,13 +51,15 @@ export default function App() {
   const [showCard, setShowCard] = React.useState(false);
 
   const handleButtonClick = (val) => {
+    if (val === true) {
+      let cnA;
+      cnA = correctAns + 1;
+      setCorrectAns(cnA);
+    }
     let na = questionNum + 1;
     if (na < questions.length) {
       setQuestionNum(na);
       setQuestion(questions[na]);
-      if (val === true) {
-        setCorrectAns(correctAns + 1);
-      }
     } else {
       setShowCard(true);
     }
